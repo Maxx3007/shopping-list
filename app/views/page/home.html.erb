@@ -1,0 +1,13 @@
+<h1>Home Page</h1>
+<hr>
+
+<div class="home-page">
+
+<% @product.each do |product| %>
+<p> <strong><%= product.name  %></strong></p>
+
+<% end %>
+
+</div>
+
+<%= link_to "add product", new_product_path %>
