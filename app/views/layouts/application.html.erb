@@ -10,13 +10,10 @@
   </head>
 
   <body>
-    <div class="logo" >
-      <%= image_tag("logos/shopping-cart.jpg", width: '150px') %>
-
-
+    <div>
+      <%=  render "shared/nav"  %>
     </div>
 
-    <%=  render "shared/nav"  %>
     <%= yield %>
   </body>
 </html>

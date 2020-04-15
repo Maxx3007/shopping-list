@@ -1,13 +1,13 @@
-<h1>Home Page</h1>
-<hr>
 
 <div class="home-page">
 
+<p>These are the items that we need to buy:</p>
+
 <% @product.each do |product| %>
-<p> <strong><%= product.name  %></strong></p>
+<p> Product name:  <strong><%= product.name %></strong>  Quantity we need:  <strong>  <%= product.quantity_needed %>  </strong></p>
 
 <% end %>
 
+<p><%= link_to "Checkout Product List", products_path %></p>
 </div>
 
-<%= link_to "add product", new_product_path %>

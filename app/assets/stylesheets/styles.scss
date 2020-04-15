@@ -1,0 +1,43 @@
+body {
+ margin :42px;
+
+
+}
+
+h1 {
+  font-family: "Arial Black", Gadget, sans-serif;
+
+
+}
+
+p{
+
+  font-family: "Lucida Sans Unicode"
+}
+
+
+.navbar{
+  display:flex;
+  margin: 10px;
+  border-style: outset;
+  text-align: center;
+
+}
+
+.navbar li {
+  display: inline-block;
+  font-size: 20px;
+  padding: 20px;
+}
+
+
+.home-page{
+margin: 20px;
+}
+
+
+.table{
+margin: 20px;
+
+
+}
