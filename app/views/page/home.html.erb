@@ -4,7 +4,12 @@
 <p>These are the items that we need to buy:</p>
 
 <% @product.each do |product| %>
-<p> Product name:  <strong><%= product.name %></strong>  Quantity we need:  <strong>  <%= product.quantity_needed %>  </strong></p>
+<% if (product.quantity_needed - product.quantity_available) > 0 %>
+
+<p> Product name:  <strong><%= product.name %> </strong>  Quantity we need:  <strong>  <%=product.quantity_needed - product.quantity_available %>  </strong></p>
+
+
+<% end %>
 
 <% end %>
 

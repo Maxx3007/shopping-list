@@ -1,3 +1,9 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+
+
 body {
  margin :42px;
 
@@ -33,6 +39,7 @@ p{
 
 .home-page{
 margin: 20px;
+padding: 20px;
 }
 
 
@@ -41,3 +48,19 @@ margin: 20px;
 
 
 }
+
+.field{
+width: 240px;
+
+margin:10px;
+
+}
+
+
+.fields{
+
+
+}
+
+
+
