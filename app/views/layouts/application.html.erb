@@ -11,7 +11,16 @@
 
   <body>
     <div>
+      <% if current_user %>
+
       <%=  render "shared/nav"  %>
+
+      <% else %>
+
+      <% end %>
+
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
     </div>
 
     <%= yield %>

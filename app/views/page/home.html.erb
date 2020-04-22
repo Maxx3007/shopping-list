@@ -1,6 +1,11 @@
 
 <div class="home-page">
 
+<div>
+
+
+<% if current_user %>
+
 <p>These are the items that we need to buy:</p>
 
 <% @product.each do |product| %>
@@ -14,5 +19,27 @@
 <% end %>
 
 <p><%= link_to "Checkout Product List", products_path %></p>
+<p><%= link_to "Sign out", destroy_user_session_path, method: :delete %></p>
+
+
+<% else %>
+
+
+<h1>Welcome to the shopping list website </h1>
+<p>Please log in or register 😇.</p>
+
+
+
+<p><%= link_to "Sign up", new_user_registration_path %></p>
+<p><%= link_to "Log in", new_user_session_path %></p>
+
+<% end %>
+
+
+</div>
+
+
+
+
 </div>
 
