@@ -7,26 +7,40 @@
 
 <p>These are the items that we have at home:</p>
 
-<% @product.each do |product| %>
 
-<p> Product name:  <strong><%= product.name %> </strong>  Quantity we have:  <strong>  <%=product.quantity_available %>  </strong></p>
+ <table style="width: 50%;" >
+    <tbody>
+      <% @product.each do |product| %>
+        <tr>
+          <td> <p><strong><%= product.name %></strong></p>  </td>
+          <td> <%=product.quantity_available %></td>
+        </tr>
+      <% end %>
+     </tbody>
+  </table>
 
 
-<% end %>
 
 
-<p><%= link_to "Checkout Product List", products_path %></p>
+<p><%= link_to "Checkout Product List", products_path, :class => "btn btn-primary btn-lg"  %></p>
+
+
+
 
 <% else %>
 
 
-<h1>Welcome to the shopping list website </h1>
-<p>Please log in or register 😇.</p>
+<div class="banner" style="background-image:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= image_path "homepage-shopping.jpg"%>)">
+    <div class="container d-flex">
+        <h1>Welcome to the shopping list website </h1>
+        <p>Please log in or register 😇.</p>
+      <div class="d-flex justify-content-center">
+        <%= link_to "Sign up", new_user_registration_path, :class => "btn btn-primary btn-lg"%>
+        <%= link_to "Log in", new_user_session_path, :class => "btn btn-primary btn-lg" %>
+      </div>
 
-
-
-<p><%= link_to "Sign up", new_user_registration_path %></p>
-<p><%= link_to "Log in", new_user_session_path %></p>
+    </div>
+</div>
 
 <% end %>
 

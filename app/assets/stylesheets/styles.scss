@@ -4,11 +4,6 @@
 
 
 
-body {
- margin :42px;
-
-
-}
 
 h1 {
   font-family: "Arial Black", Gadget, sans-serif;
@@ -43,24 +38,27 @@ padding: 20px;
 }
 
 
-.table{
-margin: 20px;
 
-
-}
-
-.field{
-width: 240px;
-
-margin:10px;
-
-}
-
-
-.fields{
-
-
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 271px 0;
+  z-index: 0;
+  position: relative;
+  height: 100vh;
+  color: white;
 }
 
 
+span {
+    margin: 0 10px;
+}
+
+span:first-of-type {
+    margin-left: 0;
+}
+
+span:last-of-type {
+    margin-right: 0;
+}
 

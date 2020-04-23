@@ -1,45 +1,62 @@
 
 <div class="home-page">
 
-<div>
 
 
 <% if current_user %>
 
 <p>These are the items that we need to buy:</p>
 
-<% @product.each do |product| %>
-<% if (product.quantity_needed - product.quantity_available) > 0 %>
+ <table style="width: 50%;" >
+    <tbody>
 
-<p> Product name:  <strong><%= product.name %> </strong>  Quantity we need:  <strong>  <%=product.quantity_needed - product.quantity_available %>  </strong></p>
+        <% @product.each do |product| %>
+          <% if (product.quantity_needed - product.quantity_available) > 0 %>
+            <tr>
+              <td> <p><strong><%= product.name %></strong></p> </td>
+              <td> <%=product.quantity_needed - product.quantity_available %></td>
+            </tr>
+
+          <% end %>
+
+        <% end %>
+    </tbody>
+  </table>
+
+<br>
+
+<div class="d-flex justify-content-center">
+
+<%= link_to "Checkout Product List", products_path,  :class => "btn btn-primary btn-lg"  %>
+
+<%= link_to "Sign out", destroy_user_session_path, method: :delete,  :class => "btn btn-primary btn-lg" %>
+</div>
+
+</div>
 
 
-<% end %>
-
-<% end %>
-
-<p><%= link_to "Checkout Product List", products_path %></p>
-<p><%= link_to "Sign out", destroy_user_session_path, method: :delete %></p>
 
 
 <% else %>
 
+<div class="banner" style="background-image:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= image_path "homepage-shopping.jpg"%>)">
+    <div class="container d-flex">
+        <h1>Welcome to the shopping list website </h1>
+        <p>Please log in or register 😇.</p>
+      <div class="d-flex justify-content-center">
+        <%= link_to "Sign up", new_user_registration_path, :class => "btn btn-primary btn-lg"%>
+        <%= link_to "Log in", new_user_session_path, :class => "btn btn-primary btn-lg" %>
+      </div>
 
-<h1>Welcome to the shopping list website </h1>
-<p>Please log in or register 😇.</p>
+    </div>
+</div>
 
 
-
-<p><%= link_to "Sign up", new_user_registration_path %></p>
-<p><%= link_to "Log in", new_user_session_path %></p>
 
 <% end %>
 
 
-</div>
 
 
 
-
-</div>
 
