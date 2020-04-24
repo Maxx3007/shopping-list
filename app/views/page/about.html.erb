@@ -11,10 +11,12 @@
  <table style="width: 50%;" >
     <tbody>
       <% @product.each do |product| %>
+        <% if current_user.id == product.user_id %>
         <tr>
           <td> <p><strong><%= product.name %></strong></p>  </td>
           <td> <%=product.quantity_available %></td>
         </tr>
+        <% end %>
       <% end %>
      </tbody>
   </table>
